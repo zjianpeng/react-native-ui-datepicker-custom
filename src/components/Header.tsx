@@ -132,7 +132,6 @@ const Header = ({ buttonPrevIcon, buttonNextIcon }: HeaderProps) => {
       <View style={[styles.textContainer, theme?.headerTextContainerStyle]}>
         <Text style={[styles.text, theme?.headerTextStyle]}>
           {currentMonthText}
-          {locale === 'zh' ? '月' : ''}
         </Text>
       </View>
     </Pressable>
