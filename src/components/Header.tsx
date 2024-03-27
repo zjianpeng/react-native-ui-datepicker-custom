@@ -106,6 +106,7 @@ const Header = ({ buttonPrevIcon, buttonNextIcon }: HeaderProps) => {
             {calendarView === 'year'
               ? `${years.at(0)} - ${years.at(-1)}`
               : dayjs(currentDate).format('YYYY')}
+            {locale === 'zh' ? '年' : ''}
           </Text>
         </View>
       </Pressable>
@@ -131,6 +132,7 @@ const Header = ({ buttonPrevIcon, buttonNextIcon }: HeaderProps) => {
       <View style={[styles.textContainer, theme?.headerTextContainerStyle]}>
         <Text style={[styles.text, theme?.headerTextStyle]}>
           {currentMonthText}
+          {locale === 'zh' ? '月' : ''}
         </Text>
       </View>
     </Pressable>
@@ -139,8 +141,17 @@ const Header = ({ buttonPrevIcon, buttonNextIcon }: HeaderProps) => {
   const renderSelectors = (
     <>
       <View style={styles.selectorContainer}>
-        {calendarView !== 'year' ? monthSelector : null}
-        {yearSelector()}
+        {locale === 'zh' ? (
+          <>
+            {yearSelector()}
+            {calendarView !== 'year' ? monthSelector : null}
+          </>
+        ) : (
+          <>
+            {calendarView !== 'year' ? monthSelector : null}
+            {yearSelector()}
+          </>
+        )}
       </View>
       {timePicker && mode === 'single' && calendarView !== 'year' ? (
         <Pressable
