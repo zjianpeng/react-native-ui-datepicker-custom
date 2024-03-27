@@ -13,6 +13,7 @@ import GithubLink from './components/GithubLink';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import DateTimePicker, { DateType, ModeType } from '../../src';
 import dayjs from 'dayjs';
+import 'dayjs/locale/zh';
 import 'dayjs/locale/en';
 import 'dayjs/locale/de';
 import 'dayjs/locale/es';

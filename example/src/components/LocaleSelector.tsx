@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 
-const Locales = ['en', 'de', 'es', 'fr', 'tr'];
+const Locales = ['en', 'de', 'es', 'fr', 'tr', 'zh'];
 
 type Props = {
   locale: string;
